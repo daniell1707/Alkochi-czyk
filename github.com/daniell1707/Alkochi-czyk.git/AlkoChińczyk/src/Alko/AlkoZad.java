@@ -14,7 +14,7 @@ import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 
 public class AlkoZad  {
-	
+
 	AlkoZad(String a,int kostka){
 		JFrame frame1 = new JFrame("ZADANIE");
 		frame1.setSize(300, 400);

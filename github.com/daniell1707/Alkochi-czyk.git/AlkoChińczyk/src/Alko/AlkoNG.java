@@ -21,7 +21,8 @@ public class AlkoNG{
 	static Alko alko;
 	AlkoNG(){
 		AlkoNGGraf g = new AlkoNGGraf();
-		fileList = file.listFiles(new FilenameFilter() {//³aduje listê plików z folderu zadania
+		
+		fileList = file.listFiles(new FilenameFilter() {
 		    public boolean accept(File file, String name) {
 		        if (name.endsWith(".txt")) {
 		            // filters files whose extension is .txt
