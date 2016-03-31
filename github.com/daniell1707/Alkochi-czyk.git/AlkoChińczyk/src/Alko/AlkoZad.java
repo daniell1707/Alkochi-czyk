@@ -13,8 +13,8 @@ import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 
-public class AlkoZad  {
-
+public class AlkoZad  {//klasa tworz¹ca nowe okno w którym wyœwietla siê zadanie i iloœæ wy¿uconych oczek
+	//(przekazywane jako parametry w konstruktorze)
 	AlkoZad(String a,int kostka){
 		JFrame frame1 = new JFrame("ZADANIE");
 		frame1.setSize(300, 400);
