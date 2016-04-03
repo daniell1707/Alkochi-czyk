@@ -8,12 +8,12 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
-public class AlkoZadGraf extends JPanel   {
+public class KoGraf extends JPanel{
 	private BufferedImage tlo;
-
-	AlkoZadGraf(){
+	KoGraf(){
+		this.setLayout(null);
 		this.setSize(300,400);
-		File imageFile = new File("img/zadania.png");
+		File imageFile = new File("img/gg.png");
 
 		try {
 			tlo = ImageIO.read(imageFile);
@@ -22,8 +22,7 @@ public class AlkoZadGraf extends JPanel   {
 			System.err.println("Blad odczytu planszy");
 			e.printStackTrace();
 		}
-	//³adowanie pionka czerwonego
-	imageFile = new File("img/czerwony.png");
+	
 	}
 	public void paintComponent(Graphics g){//funkcja rysuj¹ca
 		super.paintComponent(g);

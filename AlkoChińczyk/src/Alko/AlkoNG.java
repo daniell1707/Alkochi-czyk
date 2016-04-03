@@ -19,9 +19,10 @@ public class AlkoNG{
 	private String[] fileNames;
 	JComboBox JCBquestList;
 	static Alko alko;
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public
 	AlkoNG(){
 		AlkoNGGraf g = new AlkoNGGraf();
-		
 		fileList = file.listFiles(new FilenameFilter() {
 		    public boolean accept(File file, String name) {
 		        if (name.endsWith(".txt")) {

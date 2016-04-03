@@ -13,17 +13,16 @@ import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 
-public class AlkoZad  {//klasa tworz¹ca nowe okno w którym wyœwietla siê zadanie i iloœæ wy¿uconych oczek
-	//(przekazywane jako parametry w konstruktorze)
+public class AlkoZad  {
 	AlkoZad(String a,int kostka){
-		JFrame frame1 = new JFrame("ZADANIE");
-		frame1.setSize(300, 400);
-		frame1.setLocationRelativeTo(null);
-		frame1.setResizable(true);
-		frame1.setLayout(null);
-		frame1.setVisible(true);
+		JFrame frame = new JFrame("ZADANIE");
+		frame.setSize(300, 400);
+		frame.setLocationRelativeTo(null);
+		frame.setResizable(true);
+		frame.setLayout(null);
+		
 		AlkoZadGraf g = new AlkoZadGraf();
-		frame1.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		JLabel label1 = new JLabel(Integer.toString(kostka));
 		label1.setForeground(Color.WHITE);
 		label1.setFont(new Font("Serif", Font.BOLD, 72));
@@ -41,18 +40,10 @@ public class AlkoZad  {//klasa tworz¹ca nowe okno w którym wyœwietla siê zadanie
 		area.setBounds(10,250,270,180);
 		area.setText(a);
 		
-		JButton Wyjscie= new JButton("Wyjscie");
-		Wyjscie.setBounds(80, 300, 120, 40);
-		Wyjscie.setBackground(Color.WHITE);
-		frame1.add(Wyjscie);
-		Wyjscie.addActionListener(new ActionListener(){
-			 public void actionPerformed(ActionEvent e) {
-				frame1.dispose();
-			 }});
-		
-		frame1.add(area);
-		frame1.add(label1);
-		frame1.add(g);
+		frame.add(area);
+		frame.add(label1);
+		frame.add(g);
+		frame.setVisible(true);
 		
 	}
 

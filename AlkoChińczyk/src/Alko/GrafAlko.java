@@ -73,39 +73,41 @@ public class GrafAlko extends JPanel {
 					System.err.println("Blad odczytu pionka zoltego");
 					e.printStackTrace();
 				}
-		this.setSize(900, 900);
+		this.setSize(700, 700);
 		this.setLayout(null);
 		
-		pionki[0][0]=150;
-		pionki[0][1]=670;
-		pionki[1][0]=190;
-		pionki[1][1]=670;
-		pionki[2][0]=150;
-		pionki[2][1]=710;
-		pionki[3][0]=190;
-		pionki[3][1]=710;
+		pionki[0][0]=115;
+		pionki[0][1]=525;
+		pionki[1][0]=140;
+		pionki[1][1]=525;
+		pionki[2][0]=115;
+		pionki[2][1]=555;
+		pionki[3][0]=140;
+		pionki[3][1]=555;
 	}
 	public void ruchPrawo(int a){
 		aktywnyGracz=a;
 		timer = new Timer();
-		timer.schedule(new Prawo(),1,5);
+		Timer timer2 = new Timer();
+		timer2.schedule(new o(), 1,1);
+		timer.schedule(new Prawo(),1);
 		
 	}
 	public void ruchLewo(int a){
 		aktywnyGracz=a;
 		timer = new Timer();
-		timer.schedule(new Lewo(),1,5);
+		timer.schedule(new Lewo(),1);
 	}
 	public void ruchGora(int a){
 		aktywnyGracz=a;
 		timer = new Timer();
-		timer.schedule(new Gora(),1,5);
+		timer.schedule(new Gora(),1);
 		
 	}
 	public void ruchDol(int a){
 		aktywnyGracz=a;
 		timer = new Timer();
-		timer.schedule(new Dol(),1,5);
+		timer.schedule(new Dol(),1);
 	}
 	public void paintComponent(Graphics g){//funkcja rysuj¹ca
 		super.paintComponent(g);
@@ -118,21 +120,32 @@ public class GrafAlko extends JPanel {
 	class Prawo extends TimerTask {
 		int piksele = 0;
 	    public void run() {
-	    	pionki[aktywnyGracz][0]++;
+	    	/*pionki[aktywnyGracz][0]++;
 	    	piksele++;
 	    	AlkoNG.alko.g.repaint();
-	    	if (piksele==75){
+	    	if (piksele==58){
 	    		Alko.kostka--;
 	    		if(Alko.kostka>0){
 	    			Alko.ruchPionka();
-	    			
-	    		}
-	    		else{
-	    			Alko.kostka=5;
 	    		}
 	    		this.cancel();
 	    		
+	    	}*/
+	    	while(piksele!=58){
+	    		piksele++;
+	    		pionki[aktywnyGracz][0]++;
+	    		try {
+					Thread.sleep(5);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+	    		//AlkoNG.alko.g.repaint();
 	    	}
+	    	Alko.kostka--;
+	    	if(Alko.kostka>0)
+	    		Alko.ruchPionka();
+	    	this.cancel();
 	    }
 	}
 	class Dol extends TimerTask {
@@ -141,18 +154,21 @@ public class GrafAlko extends JPanel {
 	    	pionki[aktywnyGracz][1]++;
 	    	piksele++;
 	    	Alko.g.repaint();
-	    	if (piksele==75){
+	    	if (piksele==58){
 	    		Alko.kostka--;
 	    		if(Alko.kostka>0){
 	    			Alko.ruchPionka();
 	    			
 	    		}
-	    		else{
-	    			Alko.kostka=5;
-	    		}
 	    		this.cancel();
 	    		
 	    	}
+	    }
+	}
+	class o extends TimerTask {
+		int piksele = 0;
+	    public void run() {
+	    	Alko.g.repaint();
 	    }
 	}	
 	class Lewo extends TimerTask {
@@ -161,13 +177,10 @@ public class GrafAlko extends JPanel {
 	    	pionki[aktywnyGracz][0]--;
 	    	piksele++;
 	    	AlkoNG.alko.g.repaint();
-	    	if (piksele==75){
+	    	if (piksele==58){
 	    		Alko.kostka--;
 	    		if(Alko.kostka>0){
 	    			Alko.ruchPionka();
-	    		}
-	    		else{
-	    			Alko.kostka=5;
 	    		}
 	    		this.cancel();
 	    		
@@ -180,13 +193,10 @@ public class GrafAlko extends JPanel {
 	    	pionki[aktywnyGracz][1]--;
 	    	piksele++;
 	    	Alko.g.repaint();
-	    	if (piksele==75){
+	    	if (piksele==58){
 	    		Alko.kostka--;
 	    		if(Alko.kostka>0){
 	    			Alko.ruchPionka();
-	    		}
-	    		else{
-	    			Alko.kostka=5;
 	    		}
 	    		this.cancel();
 	    		
