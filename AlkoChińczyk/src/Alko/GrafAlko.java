@@ -88,8 +88,6 @@ public class GrafAlko extends JPanel {
 	public void ruchPrawo(int a){
 		aktywnyGracz=a;
 		timer = new Timer();
-		Timer timer2 = new Timer();
-		timer2.schedule(new o(), 1,1);
 		timer.schedule(new Prawo(),1);
 		
 	}
@@ -120,17 +118,6 @@ public class GrafAlko extends JPanel {
 	class Prawo extends TimerTask {
 		int piksele = 0;
 	    public void run() {
-	    	/*pionki[aktywnyGracz][0]++;
-	    	piksele++;
-	    	AlkoNG.alko.g.repaint();
-	    	if (piksele==58){
-	    		Alko.kostka--;
-	    		if(Alko.kostka>0){
-	    			Alko.ruchPionka();
-	    		}
-	    		this.cancel();
-	    		
-	    	}*/
 	    	while(piksele!=58){
 	    		piksele++;
 	    		pionki[aktywnyGracz][0]++;
@@ -140,7 +127,6 @@ public class GrafAlko extends JPanel {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-	    		//AlkoNG.alko.g.repaint();
 	    	}
 	    	Alko.kostka--;
 	    	if(Alko.kostka>0)
@@ -158,17 +144,9 @@ public class GrafAlko extends JPanel {
 	    		Alko.kostka--;
 	    		if(Alko.kostka>0){
 	    			Alko.ruchPionka();
-	    			
 	    		}
 	    		this.cancel();
-	    		
 	    	}
-	    }
-	}
-	class o extends TimerTask {
-		int piksele = 0;
-	    public void run() {
-	    	Alko.g.repaint();
 	    }
 	}	
 	class Lewo extends TimerTask {
@@ -183,7 +161,6 @@ public class GrafAlko extends JPanel {
 	    			Alko.ruchPionka();
 	    		}
 	    		this.cancel();
-	    		
 	    	}
 	    }
 	}	
@@ -199,7 +176,6 @@ public class GrafAlko extends JPanel {
 	    			Alko.ruchPionka();
 	    		}
 	    		this.cancel();
-	    		
 	    	}
 	    }
 	}	

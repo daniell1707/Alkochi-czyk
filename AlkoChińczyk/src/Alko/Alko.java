@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.io.LineNumberReader;
 import java.util.Random;
 import java.util.Timer;
+import java.util.TimerTask;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -37,6 +39,7 @@ public class Alko{
 		window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		window.add(g);
 		g.repaint();
+		timer.schedule(new refresh(), 1,1);
 		ruchButton= new JButton("Ruch");
 		ruchButton.setBounds(8, 350, 100, 40);
 		ruchButton.setBackground(Color.WHITE);
@@ -155,6 +158,11 @@ public class Alko{
 		}
 		label.repaint();
 	}
-	
+	class refresh extends TimerTask {
+		int piksele = 0;
+	    public void run() {
+	    	g.repaint();
+	    }
+	}	
 	
 }
