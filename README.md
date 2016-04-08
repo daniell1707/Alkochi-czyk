@@ -4,6 +4,7 @@ Sztuka pijanego mistrza
 
 Opis gry:
 Gra planszowa z przypisanymi zadaniami związanymi z alkoholem, które grający wykonują w trakcie gry.
+
 Język: Java.
 
 Plan tworzenia projektu:
