@@ -1,5 +1,5 @@
 # Alkochi-czyk
-Sztuka pijanego mistrza
+ Road to Drunk Tank
 
 
 Opis gry:
